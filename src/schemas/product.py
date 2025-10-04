@@ -11,7 +11,7 @@ from sqlalchemy import (
     Text,
 )
 
-from src.metadata import metadata_obj
+from src.schemas.metadata import metadata_obj
 
 product_group = Table(
     "product_group",

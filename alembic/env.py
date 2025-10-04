@@ -18,7 +18,7 @@ alembic_postgresql_enum.set_configuration(alembic_postgresql_enum.Config())
 # для поддержки 'autogenerate'
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
-from src.metadata import metadata_obj  # noqa: E402
+from src.schemas.metadata import metadata_obj  # noqa: E402
 from src.config import Settings  # noqa: E402
 
 target_metadata = metadata_obj

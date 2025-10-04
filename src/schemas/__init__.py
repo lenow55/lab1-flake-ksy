@@ -1,4 +1,4 @@
-from src.schemas import date, facts, product
+from src.schemas import date, facts, product, city
 from src.schemas.metadata import metadata_obj
 
 __all__ = [
@@ -6,4 +6,5 @@ __all__ = [
     "product",
     "facts",
     "date",
+    "city",
 ]

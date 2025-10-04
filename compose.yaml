@@ -10,7 +10,7 @@ services:
     secrets:
       - db_password
     volumes:
-      - postgres_parse_vol:/var/lib/postgresql/data/
+      - postgres_vol:/var/lib/postgresql/data/
     healthcheck:
       test:
         [
@@ -32,11 +32,13 @@ services:
     secrets:
       - pgadmin_pass
     volumes:
-      - pgadmin_data:/home/rundeck/server/data
+      - pgadmin_data:/var/lib/pgadmin
+      - pgadmin_servers:/pgadmin4/servers.json
 
 volumes:
-  postgres_parse_vol:
+  postgres_vol:
   pgadmin_data:
+  pgadmin_servers:
 
 secrets:
   db_password:

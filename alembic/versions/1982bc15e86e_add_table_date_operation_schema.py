@@ -24,7 +24,7 @@ def upgrade() -> None:
     op.create_table('date_operation',
     sa.Column('id', sa.UUID(), nullable=False),
     sa.Column('date', sa.DateTime(timezone=True), nullable=True, comment='Дата события'),
-    sa.PrimaryKeyConstraint('id', name='pk_city_type_id'),
+    sa.PrimaryKeyConstraint('id', name='pk_date_operation_id'),
     comment='Дата операции'
     )
     op.create_index('ix_date_operation_date', 'date_operation', ['date'], unique=False)

@@ -17,7 +17,7 @@ date_operation = Table(
     Column("id", UUID(as_uuid=True), default=uuid.uuid4),
     Column("date", DateTime(timezone=True), nullable=True, comment="Дата события"),
     # ограничения на колонки
-    PrimaryKeyConstraint("id", name="pk_city_type_id"),
+    PrimaryKeyConstraint("id", name="pk_date_operation_id"),
     comment="Дата операции",
 )
 

@@ -1,4 +1,11 @@
-from src.schemas import date, facts, product, city, localization
+from src.schemas import (
+    city,
+    customer,
+    date,
+    facts,
+    localization,
+    product,
+)
 from src.schemas.metadata import metadata_obj
 
 __all__ = [
@@ -8,4 +15,5 @@ __all__ = [
     "date",
     "city",
     "localization",
+    "customer",
 ]

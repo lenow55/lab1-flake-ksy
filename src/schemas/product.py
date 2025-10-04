@@ -7,6 +7,7 @@ from sqlalchemy import (
     Index,
     Integer,
     PrimaryKeyConstraint,
+    String,
     Table,
     Text,
 )
@@ -17,8 +18,8 @@ product_group = Table(
     "product_group",
     metadata_obj,
     Column("id_product_group", UUID(as_uuid=True), default=uuid.uuid4),
-    Column("name", Text(length=50), nullable=False, comment="Наименование"),
-    Column("memo", Text(length=None), nullable=True, comment="Комментарий"),
+    Column("name", String(length=50), nullable=False, comment="Наименование"),
+    Column("memo", Text(), nullable=True, comment="Комментарий"),
     # ограничения на колонки
     PrimaryKeyConstraint("id_product_group", name="pk_product_group_id_product_group"),
     comment="Группа товаров",
@@ -36,8 +37,8 @@ product = Table(
         "fk_product_group", UUID(as_uuid=True), nullable=True, comment="FK Гр Товаров"
     ),
     Column("id_catalog", Integer(), nullable=True, comment="ID каталог"),
-    Column("name", Text(length=50), nullable=True, comment="Наименование"),
-    Column("memo", Text(length=None), nullable=True, comment="Комментарий"),
+    Column("name", String(length=50), nullable=True, comment="Наименование"),
+    Column("memo", Text(), nullable=True, comment="Комментарий"),
     # связи ключей
     ForeignKeyConstraint(
         ["id_product"],

@@ -3,6 +3,7 @@ import uuid
 from sqlalchemy import (
     UUID,
     Column,
+    ForeignKeyConstraint,
     Index,
     PrimaryKeyConstraint,
     String,
@@ -34,6 +35,17 @@ city = Table(
     ),
     Column("city", String(length=50), nullable=False, comment="Город"),
     Column("memo", Text(), nullable=True, comment="Комментарий"),
+    # связи ключей
+    ForeignKeyConstraint(
+        ["fk_city_type_id"],
+        ["city_type.id"],
+        name="city_fk_city_type_id_city_type_id",
+        onupdate="CASCADE",
+        ondelete="SET NULL",
+    ),
+    # ограничения на колонки
+    PrimaryKeyConstraint("id", name="pk_city_id"),
+    comment="Город",
 )
 
 city_city_ix = Index("ix_city_city", city.c.city, unique=False)

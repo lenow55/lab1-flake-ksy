@@ -32,11 +32,11 @@ services:
     secrets:
       - pgadmin_pass
     volumes:
-      - pgadmin_parse_data:/home/rundeck/server/data
+      - pgadmin_data:/home/rundeck/server/data
 
 volumes:
   postgres_parse_vol:
-  pgadmin_parse_data:
+  pgadmin_data:
 
 secrets:
   db_password:

@@ -1,0 +1,45 @@
+services:
+  db:
+    image: postgres:18-alpine
+    expose:
+      - 8432:5432
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD_FILE: /run/secrets/db_password
+      POSTGRES_DB: db
+    secrets:
+      - db_password
+    volumes:
+      - postgres_parse_vol:/var/lib/postgresql/data/
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "sh -c 'pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}'",
+        ]
+      interval: 30s
+      timeout: 60s
+      retries: 5
+      start_period: 80s
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    ports:
+      - 6123:80
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@citizix.com
+      - PGADMIN_DEFAULT_PASSWORD_FILE=/run/secrets/pgadmin_pass
+    secrets:
+      - pgadmin_pass
+    volumes:
+      - pgadmin_parse_data:/home/rundeck/server/data
+
+volumes:
+  postgres_parse_vol:
+  pgadmin_parse_data:
+
+secrets:
+  db_password:
+    file: ./secrets/db_password
+  pgadmin_pass:
+    file: ./secrets/pgadmin_pass

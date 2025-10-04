@@ -1,7 +1,7 @@
 services:
   db:
     image: postgres:18-alpine
-    expose:
+    ports:
       - 8432:5432
     environment:
       POSTGRES_USER: user

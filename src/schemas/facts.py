@@ -35,6 +35,13 @@ facts = Table(
         onupdate="CASCADE",
         ondelete="SET NULL",
     ),
+    ForeignKeyConstraint(
+        ["fk_id_date"],
+        ["date_operation.id"],
+        name="fk_facts_date_operation_id",
+        onupdate="CASCADE",
+        ondelete="SET NULL",
+    ),
     # ограничения на колонки
     PrimaryKeyConstraint("id", name="pk_facts_id"),
     comment="Факты",

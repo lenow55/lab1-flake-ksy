@@ -41,7 +41,7 @@ product = Table(
     Column("memo", Text(), nullable=True, comment="Комментарий"),
     # связи ключей
     ForeignKeyConstraint(
-        ["id_product"],
+        ["fk_product_group"],
         ["product_group.id_product_group"],
         name="fk_id_product_id_product_group",
         onupdate="CASCADE",

@@ -33,12 +33,10 @@ services:
       - pgadmin_pass
     volumes:
       - pgadmin_data:/var/lib/pgadmin
-      - pgadmin_servers:/pgadmin4/servers.json
 
 volumes:
   postgres_vol:
   pgadmin_data:
-  pgadmin_servers:
 
 secrets:
   db_password:

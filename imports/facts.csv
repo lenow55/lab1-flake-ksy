@@ -1,0 +1,5 @@
+id,fk_id_city,fk_id_customer,fk_id_product,fk_id_date,price,volume,amount_of_money,remains,debt
+f0000001-aaaa-bbbb-cccc-000000000001,aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa,c1111111-aaaa-bbbb-cccc-000000000001,aaaaaaaa-bbbb-cccc-dddd-000000000001,d1111111-aaaa-bbbb-cccc-000000000001,10.50,100,1050.00,50,0
+f0000002-aaaa-bbbb-cccc-000000000002,bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb,c1111111-aaaa-bbbb-cccc-000000000002,aaaaaaaa-bbbb-cccc-dddd-000000000004,d1111111-aaaa-bbbb-cccc-000000000002,5.00,200,1000.00,100,200
+f0000003-aaaa-bbbb-cccc-000000000003,cccccccc-cccc-cccc-cccc-cccccccccccc,c1111111-aaaa-bbbb-cccc-000000000003,aaaaaaaa-bbbb-cccc-dddd-000000000005,d1111111-aaaa-bbbb-cccc-000000000003,7.20,50,360.00,20,0
+

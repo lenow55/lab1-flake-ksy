@@ -4,6 +4,7 @@ from sqlalchemy import (
     UUID,
     Column,
     ForeignKeyConstraint,
+    Index,
     Integer,
     Numeric,
     PrimaryKeyConstraint,
@@ -60,3 +61,8 @@ facts = Table(
     PrimaryKeyConstraint("id", name="pk_facts_id"),
     comment="Факты",
 )
+
+facts_product_ix = Index("ix_facts_product", facts.c.fk_id_product, unique=False)
+facts_date_ix = Index("ix_facts_date", facts.c.fk_id_date, unique=False)
+facts_city_ix = Index("ix_facts_city", facts.c.fk_id_city, unique=False)
+facts_cutomer_ix = Index("ix_facts_customer", facts.c.fk_id_customer, unique=False)
